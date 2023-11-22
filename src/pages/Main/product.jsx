@@ -19,7 +19,9 @@ export const Product = (props) => {
 
             </div>
 
-            <button className="view-spots-button"> Посмотреть точки </button>
+            <div className="button-container">
+                <button className="view-spots-button">Посмотреть точки</button>
+            </div>
 
         </div>
     );

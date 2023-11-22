@@ -5,7 +5,7 @@ export const Product = (props) => {
 
     return (
         <div className="product">
-            <img src={productImage}></img>
+            <img src={productImage} alt={id}></img>
 
             <div className="product-description">
 

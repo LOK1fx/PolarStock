@@ -1,12 +1,40 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 import { PRODUCTS } from "../../test_products";
 import { CATEGORIES } from "../../test_products";
 import { Product } from "./product";
 
+import { Auth } from "../../components/auth";
+import { dataBase } from "../../config/firebase";
+import { getDocs, collection } from "firebase/firestore"
+
 import "./main_page.css"
 
 export const MainPage = () => {
+    const [productList, setProductList] = useState([]);
+    const productsCollectionRef = collection(dataBase, "PRODUCTS");
+
+    useEffect(() => {
+        const getProductList = async () =>{
+            try {
+                const data = await getDocs(productsCollectionRef);
+                const filteredData = data.docs.map((doc) => ({
+                    ...doc.data(),
+                     id: doc.id
+                }));
+
+                console.log(filteredData);
+
+                setProductList(filteredData);
+            }
+            catch (ex) {
+                console.error(ex);
+            }
+        };
+
+        getProductList();
+    }, []);
+
     return (
         <div className="main-page">
             <div className="category">
@@ -17,8 +45,8 @@ export const MainPage = () => {
                 
                 <div className="products">
                     {
-                        PRODUCTS.map((product) => (
-                            <Product data={product}></Product>
+                        productList.map((product) => (
+                           <Product data={product}></Product>
                     ))}
                 </div>
             </div>

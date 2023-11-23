@@ -1,9 +1,21 @@
 import React, { useState } from "react";
 
 import { auth, googleProvider } from "../config/firebase";
-import { signInWithPopup, signOut } from "firebase/auth";
+import { signInWithPopup } from "firebase/auth";
+import { signOut } from "firebase/auth";
 
 import "./auth.css"
+
+export const logOut = async () => {
+    try
+    {
+        await signOut(auth);
+    }
+    catch (ex)
+    {
+        console.error(ex);
+    }
+};
 
 export const Auth = () => {
     const [isLoggedIn, setLoggedIn] = useState(false);
@@ -24,17 +36,6 @@ export const Auth = () => {
         
     };
 
-    const logOut = async () => {
-        try
-        {
-            await signOut(auth);
-        }
-        catch (ex)
-        {
-            console.error(ex);
-        }
-    };
-
     return (
         <div>
             {isLoggedIn == false &&
@@ -43,7 +44,6 @@ export const Auth = () => {
                 <button onClick={signIn} className="login-google">Войти (Google)</button>
             </div>
             }
-            {isLoggedIn == true && <button onClick={logOut} className="logout">Выйти из аккаунта</button>}
         </div>
     );
 }

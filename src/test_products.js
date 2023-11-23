@@ -43,22 +43,26 @@ export const PRODUCTS = [
 export const CATEGORIES = [
     {
         id: 1,
-        productName: "Питание",
-        productImageURL: category_food,
+        name: "Питание",
+        imageURL: category_food,
+        price: 0,
     },
     {
         id: 2,
-        productName: "Лекарства",
-        productImageURL: category_aids,
+        name: "Лекарства",
+        imageURL: category_aids,
+        price: 0,
     },
     {
         id: 3,
-        productName: "Разное",
-        productImageURL: category_misc,
+        name: "Разное",
+        imageURL: category_misc,
+        price: 0,
     },
     {
         id: 4,
-        productName: "Прочее",
-        productImageURL: category_dif,
+        name: "Прочее",
+        imageURL: category_dif,
+        price: 0,
     },
 ]

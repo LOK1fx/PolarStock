@@ -1,0 +1,70 @@
+.profile-banner * {
+    width: 100%;
+    height: auto;
+}
+
+.account-info-background {
+    position: absolute;
+    top: 35%;
+    width: 100%;
+    height: 800px;
+    background-color: rgb(248, 248, 248);
+    align-items: center;
+}
+
+.avatar {
+    align-self: center;
+    left: 46.25%;
+    top: -10%;
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+}
+
+.user-info {
+    text-align: center;
+    font-size: 25px;
+    padding-top: 50px;
+}
+
+.user-info h2 {
+    height: 20px;
+}
+
+.user-info h3 {
+    font-size: 15px;
+    color: rgb(0,0,0, 0.5);
+}
+
+.payments-block {
+    position: relative;
+    width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    height: 170px;
+    background-color: white;
+    border-radius: 10px;
+
+    grid-row: auto;
+}
+
+.payments-button {
+    margin-left: 75px;
+    width: 200px;
+    height: 170px;
+    background-color: transparent;
+    border-radius: 8px;
+    border-color: rgba(0, 0, 0, 0.1);
+}
+
+.payments-button:hover {
+    transition: 0.1s ease-in;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.payments-button img {
+    width: 50px;
+    height: 50px;
+}

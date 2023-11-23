@@ -1,28 +1,34 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 export const Product = (props) => {
-    const {productName, avgPrice, productImageURL} = props.data;
+    const { name, imageURL, price} = props.data;
+
+    const navigate = useNavigate();
+
+    const onViewSpotsClicked = () => {
+        navigate("spotlist");
+    };
 
     return (
-        <div className="product">
-            <img src={productImageURL} alt={productName}></img>
+        <button className="product" onClick={onViewSpotsClicked}>
+            <img src={imageURL} alt={name}></img>
 
             <div className="product-description">
 
                 <p>
-                    <b>{productName}</b>
+                    <b>{name}</b>
                 </p>
 
-                <p>
-                    ~{avgPrice}₽
-                </p>
+                { (price != 0 || price != undefined || price != "0") &&
+                    <p>~{price}₽</p>
+                }
+                
 
             </div>
 
-            <div className="button-container">
-                <button className="view-spots-button">Посмотреть точки</button>
-            </div>
+            <button className="view-spots-button">Посмотреть точки</button>
 
-        </div>
+        </button>
     );
 }

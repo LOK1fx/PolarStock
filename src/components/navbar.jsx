@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Compass } from "phosphor-react";
 import { Person } from "phosphor-react";
+import { ShoppingCart } from "phosphor-react";
 
 import { auth } from "../config/firebase";
 
@@ -23,12 +24,12 @@ export const Navbar = () => {
 
     return (
         <div className="navbar">
-            <div className="main-title">
+            <Link to="/" className="main-title">
                 <h1>PolarStock</h1>
-            </div>
+            </Link>
 
             <div className="links">
-                <Link to="/"> ... </Link>
+                <Link to="/cart">{<ShoppingCart size={34} />}</Link>
                 <Link to="/account">
                     <Person size={34}>Аккаунт</Person>
                 </Link>

@@ -56,12 +56,14 @@
     height: auto;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 25px;
+    gap: -55px;
+    padding-left: 25px;
 }
 
 .product {
     background-color: rgba(0, 150, 255, 0.03);
     border-radius: 15px;
+    border-width: 0px;
     width: 250px;
     height: 320px;
     display: flex;
@@ -71,13 +73,39 @@
 
 .product img {
     width: 200px;
+    height: 200px;
 }
   
 .product .product-description {
-    text-align: center;
+    text-align: left;
 }
   
 .product:hover {
     transition: 0.3s ease-in;
     cursor: pointer;
+}
+
+.view-spots-button {
+    height: 30px;
+    border-radius: 5px;
+    border-color: #56b0ff;
+    background-color: #56b0ff;
+    border-style: double;
+    color: white;
+    font-size: 15px;
+}
+
+.ad-block-wrapper {
+    display: flex;
+    flex-direction: row;
+}
+
+.ad-block {
+    width: 100%;
+    height: auto;
+    display:flex;
+    gap: 15px;
+    padding-left: 25px;
+    white-space: nowrap;
+    background-color: #1a94ff15;
 }

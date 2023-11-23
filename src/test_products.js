@@ -1,5 +1,8 @@
 //test prototype solution
 
+import { Auth } from "./components/auth";
+import { dataBase } from "./config/firebase";
+
 import product_bread from "./assets/bread.png"
 import product_fuel from "./assets/fuel.png"
 import product_water from "./assets/water2.png"
@@ -29,12 +32,14 @@ export const PRODUCTS = [
         avgPrice: 62.00,
         productImage: product_water,
     },
+    /*
     {
         id: 4,
         productName: "Нурофен",
         avgPrice: 260.25,
         productImage: product_nurofen,
     },
+    */
 ]
 
 export const CATEGORIES = [

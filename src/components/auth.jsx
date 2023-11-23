@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import { auth, googleProvider } from "../config/firebase";
 import { signInWithPopup, signOut } from "firebase/auth";
 
+import "./auth.css"
+
 export const Auth = () => {
     const [isLoggedIn, setLoggedIn] = useState(false);
 
@@ -35,8 +37,13 @@ export const Auth = () => {
 
     return (
         <div>
-            {isLoggedIn == false && <button onClick={signIn}>Log In with Google</button>}
-            {isLoggedIn == true && <button onClick={logOut}>Log Out</button>}
+            {isLoggedIn == false &&
+            <div>
+                <h1>Вы не вошли в аккаунт</h1>
+                <button onClick={signIn} className="login-google">Войти (Google)</button>
+            </div>
+            }
+            {isLoggedIn == true && <button onClick={logOut} className="logout">Выйти из аккаунта</button>}
         </div>
     );
 }

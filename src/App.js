@@ -2,6 +2,7 @@ import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Navbar } from "./components/navbar"
 import { MainPage } from "./pages/Main/main_page"
+import { AccountPage } from './pages/Account/account_page';
 import { ShopsPage } from "./pages/Shops/shops_page"
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
 
         <Routes>
           <Route path="/" element={<MainPage></MainPage>}></Route>
+          <Route path="account" element={<AccountPage></AccountPage>}></Route>
           <Route path="/shops" element={<ShopsPage></ShopsPage>}></Route>
         </Routes>
 

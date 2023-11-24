@@ -1,13 +1,20 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import { Context } from "../../context/context";
 
 export const Product = (props) => {
-    const { name, imageURL, price} = props.data;
+    const { name, imageURL, price, id} = props.data;
+
+    const { addToCart } = useContext(Context);
 
     const navigate = useNavigate();
 
     const onViewSpotsClicked = () => {
         navigate("spotlist");
+    };
+
+    const onAddToCartClicked = () => {
+        addToCart(id);
     };
 
     return (
@@ -16,18 +23,22 @@ export const Product = (props) => {
 
             <div className="product-description">
 
-                <p>
+                <p className="product-name">
                     <b>{name}</b>
                 </p>
 
-                { (price != 0 || price != undefined || price != "0") &&
+                { (price !== 0 || price !== undefined || price !== "0" || price !== '' || price !== null) &&
                     <p>~{price}₽</p>
                 }
                 
 
             </div>
 
-            <button className="view-spots-button">Посмотреть точки</button>
+            <button className="view-spots-button"><b>Посмотреть точки</b></button>
+            <button className="view-spots-button" onClick={(event) => {
+                event.stopPropagation();
+                onAddToCartClicked();
+            }}><b>Добавить в корзину</b></button>
 
         </button>
     );

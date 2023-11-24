@@ -45,24 +45,24 @@ export const CATEGORIES = [
         id: 1,
         name: "Питание",
         imageURL: category_food,
-        price: 0,
+        price: undefined,
     },
     {
         id: 2,
         name: "Лекарства",
         imageURL: category_aids,
-        price: 0,
+        price: undefined,
     },
     {
         id: 3,
         name: "Разное",
         imageURL: category_misc,
-        price: 0,
+        price: undefined,
     },
     {
         id: 4,
         name: "Прочее",
         imageURL: category_dif,
-        price: 0,
+        price: undefined,
     },
 ]

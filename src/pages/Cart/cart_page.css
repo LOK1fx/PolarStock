@@ -76,10 +76,29 @@ body {
 .cart-product {
     display: block;
     width: 100%;
-    height: 120px;
+    height: 220;
     margin-top: 10px;
     margin-left: auto;
     margin-right: auto;
 
     background-color: rgb(229, 229, 229);
+}
+
+.cart-product-info {
+    margin-left: 25px;
+    margin-right: 25px;
+    padding-top: 10px;
+}
+
+.cart-product h2 {
+    display: flex;
+    font-size: 30px;
+}
+
+.cart-product img {
+    width: 200px;
+    height: 200px;
+    display: flex;
+    margin-top: auto;
+    margin-bottom: auto;
 }

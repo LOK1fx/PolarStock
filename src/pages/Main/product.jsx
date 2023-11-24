@@ -27,7 +27,7 @@ export const Product = (props) => {
                     <b>{name}</b>
                 </p>
 
-                { (price !== 0 || price !== undefined || price !== "0" || price !== '' || price !== null) &&
+                { price !== undefined &&
                     <p>~{price}₽</p>
                 }
                 
@@ -35,10 +35,13 @@ export const Product = (props) => {
             </div>
 
             <button className="view-spots-button"><b>Посмотреть точки</b></button>
-            <button className="view-spots-button" onClick={(event) => {
-                event.stopPropagation();
-                onAddToCartClicked();
-            }}><b>Добавить в корзину</b></button>
+
+            { price !== undefined &&
+                <button className="view-spots-button" onClick={(event) => {
+                    event.stopPropagation();
+                    onAddToCartClicked();
+                }}><b>Добавить в корзину</b></button>
+            }
 
         </button>
     );

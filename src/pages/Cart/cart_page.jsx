@@ -1,6 +1,8 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 
+import { getDoc } from "firebase/firestore";
+
 import { Context } from "../../context/context";
 
 import "./cart_page.css"
@@ -33,7 +35,7 @@ export const CartPage = ({
                     products.map((product) => (
                         <div className="cart-product">
                             <div className="cart-product-info">
-                                <img src="https://i.postimg.cc/WpxSdGsq/photo-2023-11-23-20-54-42.jpg"></img>
+                                <img src="https://i.postimg.cc/rDNT6tJV/bread.png"></img>
                                 <h2>{product}</h2>
                                 <h2>{43}</h2>
                                 <h3> Кол-во: 1</h3>

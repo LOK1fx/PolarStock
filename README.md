@@ -1,6 +1,6 @@
 # PolarStock [HACK_THE_ICE_5.0]
 
-Created by SaturnSkyline and LOK1game Studio teams using ReactJs
+Created by **SaturnSkyline and LOK1game Studio** teams using ReactJs
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

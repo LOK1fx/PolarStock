@@ -5,7 +5,7 @@ import { getDocs, collection } from "firebase/firestore"
 
 import "./spot_list.css"
 
-export const SpotList = () => {
+export const SpotListPage = () => {
     const [shopList, setShopList] = useState([]);
     const shopListCollectionRef = collection(dataBase, "SHOPS");
 
